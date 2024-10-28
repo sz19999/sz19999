@@ -1,8 +1,11 @@
 body {
     background-color: #19181a;
     color: #67ff5f;
+    width: 100vw;
+    height: 100vh;
 }
 
 h1 {
-    margin: 100px auto;
+    margin: 300px auto;
+    text-align: center;
 }
