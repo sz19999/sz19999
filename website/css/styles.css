@@ -1,22 +1,236 @@
+/* global settings */
+
 * {
-    box-sizing: border-box;
-}
-
-html {
-    background-color: #19181a;
-    color: #67ff5f;
-}
-
-body {
     margin: 0;
-}
-
-h1 {
-    margin: 300px auto 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: "Press Start 2P", sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  :root {
+    --background-color1: rgb(0, 0, 160);
+    --background-color2: rgb(30, 30, 30);
+    --text-color1: rgb(0, 250, 0);
+    --text-shadow1: 0px 0px 20px rgba(0, 250, 0, 0.8);
+    --text-shadow2: 0px 0px 5px rgba(0, 250, 0, 1);
+    --text-shadow3: 0px 0px 15px rgba(0, 250, 0, 0.4);
+  }
+  
+  body {
+    position: relative;
+  }
+  
+  /* end of global settings */
+  
+  /* welcome section */
+  
+  .heading-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color1);
+    color: var(--text-color1);
     text-align: center;
-}
-
-h2 {
-    margin: 10px auto;
+    padding-top: 40vh;
+  }
+  
+  .heading {
+    text-shadow: var(--text-shadow1);
+    margin-bottom: 2vh;
+    font-size: 5em;
+  }
+  
+  .heading::after {
+    content: "|";
+    animation: blink 2s linear infinite;
+  }
+  
+  .sub-heading {
+    font-size: 1.3em;
+    text-shadow: var(--text-shadow2);
+  }
+  
+  .navbar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 5em;
+    background-color: rgb(0, 0, 120);
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--text-color1);
+    float: right;
+    margin-right: 1vw;
+    font-size: 1.3em;
+    padding: 1.5em 1em 1em 1em;
+    height: 100%;
+    transition: background-color 0.6s;
+    text-shadow: var(--text-shadow2);
+  }
+  
+  .nav-link:hover {
+    background-color: #646464;
+  }
+  
+  /* end of welcome section */
+  
+  /* projects section */
+  
+  .projects {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color2);
+    color: var(--text-color1);
     text-align: center;
-}
+    padding-top: 15vh;
+    text-shadow: var(--text-shadow3);
+  }
+  
+  .projects h2 {
+    margin-bottom: 4vh;
+    font-size: 3em;
+  }
+  
+  /* end of projects section */
+  
+  /* contact section */
+  
+  .contact {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color1);
+    color: var(--text-color1);
+    text-align: center;
+    padding-top: 40vh;
+    text-shadow: var(--text-shadow1);
+  }
+  
+  .contact h2 {
+    font-size: 3em;
+    margin-bottom: 1em;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: center;
+    margin-right: 1.5em;
+    transition: transform 0.5s;
+    text-shadow: var(--text-shadow2);
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    border: 0;
+    width: 36px;
+    height: 36px;
+    padding: 2px;
+    margin: 5px;
+    color: #00dc00;
+    border-radius: 50%;
+    background-color: #000082;
+  }
+  
+  .social-wrapper:hover {
+    transform: translate(0, 1em);
+  }
+  
+  /* end of contact section */
+  
+  .divider {
+    height: 3vh;
+    border: none;
+  }
+  
+  .divider.first {
+    background: linear-gradient(
+      var(--background-color1),
+      var(--background-color2)
+    );
+  }
+  
+  .divider.second {
+    background: linear-gradient(
+      var(--background-color2),
+      var(--background-color1)
+    );
+  }
+  
+  /* footer */
+  
+  footer {
+    position: absolute;
+    background-color: var(--background-color1);
+    width: 100%;
+    height: 2em;
+    bottom: 0;
+    text-align: center;
+  }
+  
+  footer p {
+    color: var(--text-color1);
+    font-size: 0.8em;
+    height: 100%;
+    padding-top: 0.7vh;
+  }
+  
+  /* end of footer */
+  
+  /* animations */
+  
+  @keyframes blink { 
+    0% { 
+      opacity: 1; 
+      } 
+    10%{
+      opacity: 0;
+    }
+    30% { 
+      opacity: 1; 
+      }
+    75% {
+      opacity: 1;
+      } 
+    100% { 
+      opacity: 1; 
+      }
+  }
+  
+  /* end of Animations*/
+  
+  /* site responsiveness control */
+  
+  @media (max-width: 900px) and (min-width: 700px) {
+    .heading-wrapper, .projects, .contact {
+      font-size: 0.8em;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .heading-wrapper, .projects, .contact {
+      font-size: 0.6em;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .heading {
+      font-size: 3em;
+    }
+    .projects {
+      font-size: 0.4em;
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      flex-direction: row-reverse;
+    }
+  }
