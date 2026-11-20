@@ -1,5 +1,5 @@
 Hey, I’m Sean. <br/>
-I’m an Electrical Engineering undergrad student.
+I’m an Electrical Engineer.
 <br/><br/>
 <em> "The important thing is not to stop questioning. Curiosity has its own reason for existing." - Albert Einstein </em>
 
